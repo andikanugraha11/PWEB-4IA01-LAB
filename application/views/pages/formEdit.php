@@ -8,27 +8,27 @@
 				<form class="form-group" method="post" action="<?=base_url('home/save/').$jadwal->id?>">
 					<div class="form-group">
 						<label>Hari : </label>
-						<input type="text" class="form-control" name="hari">
+						<input type="text" class="form-control" name="hari" value="<?=$jadwal->hari?>">
 					</div>
 					
 					<div class="form-group">
 						<label>Mata Kuliah : </label>
-						<input type="text" class="form-control" name="matkul">
+						<input type="text" class="form-control" name="matkul" value="<?=$jadwal->mata_kuliah?>">
                     </div>
                     <div class="form-group">
 						<label>Dosen : </label>
-						<input type="text" class="form-control" name="dosen">
+						<input type="text" class="form-control" name="dosen" value="<?=$jadwal->dosen?>">
                     </div>
                     <div class="form-group">
 						<label>Ruang Kelas : </label>
-						<input type="text" class="form-control" name="ruang">
+						<input type="text" class="form-control" name="ruang" value="<?=$jadwal->ruang?>">
 					</div>
                     <label>Jam Masuk dan keluar: </label>
 					<div class="form-group form-inline">
 						
                         <div class="input-group col-md-5">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" name="masuk" placeholder="Masukan Jam Masuk"/>
+                                <input type='text' class="form-control" name="masuk" value="<?=$jadwal->w_masuk?>"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-time"></span>
                                 </span>
@@ -37,7 +37,7 @@
                         -
                         <div class="input-group col-md-5">
                             <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" name="keluar" placeholder="Masukan Jam Keluar"/>
+                                <input type='text' class="form-control" name="keluar" value="<?=$jadwal->w_keluar?>"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-time"></span>
                                 </span>

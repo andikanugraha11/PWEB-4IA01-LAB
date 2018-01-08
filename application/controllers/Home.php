@@ -12,7 +12,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['jadwals'] = $this->jadwal->getJadwal();
+		$data['jadwals'] = $this->jadwal->getJadwals();
 		$this->load->view('include/header');
 		$this->load->view('pages/jadwal',$data);
 		$this->load->view('include/footer');
@@ -25,10 +25,11 @@ class Home extends CI_Controller {
 		$this->load->view('include/footer');
 	}
 
-	public function editJadwal()
+	public function editJadwal($id)
 	{
+		$data['jadwal'] = $this->jadwal->getJadwal($id);
 		$this->load->view('include/header');
-		$this->load->view('pages/formEdit');
+		$this->load->view('pages/formEdit',$data);
 		$this->load->view('include/footer');
 	}
 
@@ -43,7 +44,7 @@ class Home extends CI_Controller {
 			'dosen'			=> $this->input->post('dosen')
 		);
 
-		if($id != null){
+		if($id == null){
 			$query = $this->jadwal->saveJadwal($data);
 		}else{
 			$query = $this->jadwal->editJadwal($id,$data);
