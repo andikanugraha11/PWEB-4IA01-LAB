@@ -24,4 +24,9 @@ class JadwalModel extends CI_Model {
         return $query;
     }
 
+    public function deleteJadwal($id){
+        $this->db->where('id',$id);
+        return $this->db->delete('jadwal');
+    }
+
 }

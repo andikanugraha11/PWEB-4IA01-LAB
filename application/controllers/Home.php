@@ -56,4 +56,9 @@ class Home extends CI_Controller {
 			print_r('Something Wrong');
 		}
 	}
+
+	public function deleteJadwal($id){
+		$this->jadwal->deleteJadwal($id);
+		redirect('home');
+	}
 }
